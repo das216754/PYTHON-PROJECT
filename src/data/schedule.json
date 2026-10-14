@@ -1,0 +1,80 @@
+{
+  "availability": [
+    {
+      "day": "Monday",
+      "start": 540,
+      "end": 720,
+      "faculty": "Dr. Meera"
+    },
+    {
+      "day": "Monday",
+      "start": 780,
+      "end": 1020,
+      "faculty": "Prof. Arjun"
+    },
+    {
+      "day": "Monday",
+      "start": 840,
+      "end": 1020,
+      "faculty": "Dr. Meera"
+    },
+    {
+      "day": "Tuesday",
+      "start": 600,
+      "end": 780,
+      "faculty": "Dr. Meera"
+    },
+    {
+      "day": "Tuesday",
+      "start": 840,
+      "end": 1020,
+      "faculty": "Prof. Arjun"
+    },
+    {
+      "day": "Wednesday",
+      "start": 600,
+      "end": 720,
+      "faculty": "Dr. Nisha"
+    },
+    {
+      "day": "Wednesday",
+      "start": 600,
+      "end": 780,
+      "faculty": "Prof. Arjun"
+    },
+    {
+      "day": "Thursday",
+      "start": 780,
+      "end": 960,
+      "faculty": "Dr. Nisha"
+    },
+    {
+      "day": "Friday",
+      "start": 540,
+      "end": 720,
+      "faculty": "Prof. Arjun"
+    },
+    {
+      "day": "Friday",
+      "start": 780,
+      "end": 960,
+      "faculty": "Dr. Meera"
+    }
+  ],
+  "appointments": [
+    {
+      "day": "Monday",
+      "start": 840,
+      "end": 870,
+      "faculty": "Prof. Arjun",
+      "kind": "appointment"
+    },
+    {
+      "day": "Wednesday",
+      "start": 630,
+      "end": 660,
+      "faculty": "Prof. Arjun",
+      "kind": "appointment"
+    }
+  ]
+}
