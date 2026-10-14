@@ -1,7 +1,10 @@
 from collections import defaultdict
 
 from .interval_tree import AugmentedIntervalTree
-
+from .priority_queue import (
+    AppointmentPriorityQueue,
+    AppointmentRequest,
+)
 
 class FacultyScheduler:
 
@@ -17,6 +20,9 @@ class FacultyScheduler:
         for appointment in appointments or []:
             key = (appointment.day, appointment.faculty)
             self.appointments[key].append(appointment)
+
+        # New: priority queue for pending appointment requests
+        self.request_queue = AppointmentPriorityQueue()
 
     def find_slots(
         self, day, student_start, student_end, duration=30
@@ -62,7 +68,7 @@ class FacultyScheduler:
                     seen.add(unique_key)
 
                 cursor += duration
-
+    
         # Return earliest appointment slots first
         return sorted(
             results,
@@ -70,3 +76,15 @@ class FacultyScheduler:
                 slot["start"], slot["faculty"]
             )
         )
+    
+    def submit_request(self, request: AppointmentRequest) -> None:
+        """Add a student appointment request to the priority queue."""
+        self.request_queue.add_request(request)
+
+    def peek_priority_request(self) -> AppointmentRequest | None:
+        """View the highest-priority request without removing it."""
+        return self.request_queue.peek_next()
+
+    def next_priority_request(self) -> AppointmentRequest | None:
+        """Remove and return the highest-priority request."""
+        return self.request_queue.pop_next()
